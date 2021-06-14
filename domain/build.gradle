@@ -9,5 +9,6 @@ java {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}"
+    DomainModule.main.forEach {implementation(it) }
+    DomainModule.unitTest.forEach {testImplementation(it) }
 }

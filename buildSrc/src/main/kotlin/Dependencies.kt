@@ -6,11 +6,15 @@ object Android {
 }
 
 object Kotlin {
-    val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN}"
+    val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINE_CORE}"
+    val KOTLIN_CORE = "org.koin:koin-core:${Versions.KOTLIN_CORE}"
+    val KOTLIN_STBLIB = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN_STBLIB}"
 }
 
 object Test {
     val JUNIT_TEST = "junit:junit:${Versions.JUNIT_TEST}"
     val JUNIT_EXT_TEXT = "androidx.test.ext:junit:${Versions.JUNIT_EXT_TEXT}"
     val ESPRESSO = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
+    val MOCKITO_CORE = "org.mockito:mockito-core:${Versions.MOCKITO_CORE}"
+    val MOCKITO_KOTLIN = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.MOCKITO_KOTLIN}"
 }
