@@ -2,8 +2,7 @@ object DomainModule {
 
     val main = listOf(
         Kotlin.KOTLIN_STBLIB,
-        Kotlin.COROUTINES_CORE,
-        Kotlin.KOTLIN_CORE
+        Kotlin.COROUTINES_CORE
     )
 
     val unitTest = listOf(
@@ -12,8 +11,4 @@ object DomainModule {
         Test.MOCKITO_KOTLIN
     )
 
-    val interfaceTest = listOf(
-        Test.JUNIT_EXT_TEXT,
-        Test.ESPRESSO
-    )
 }

@@ -7,7 +7,6 @@ object Android {
 
 object Kotlin {
     val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINE_CORE}"
-    val KOTLIN_CORE = "org.koin:koin-core:${Versions.KOTLIN_CORE}"
     val KOTLIN_STBLIB = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN_STBLIB}"
 }
 
