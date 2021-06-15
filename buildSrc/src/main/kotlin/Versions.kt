@@ -11,4 +11,5 @@ object Versions {
     val COROUTINE_CORE = "1.4.3"
     val MOCKITO_CORE = "3.9.0"
     val MOCKITO_KOTLIN = "2.2.0"
+    val COROUTINE_TEST = "1.4.2"
 }

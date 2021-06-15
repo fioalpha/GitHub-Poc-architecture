@@ -8,7 +8,8 @@ object DomainModule {
     val unitTest = listOf(
         Test.JUNIT_TEST,
         Test.MOCKITO_CORE,
-        Test.MOCKITO_KOTLIN
+        Test.MOCKITO_KOTLIN,
+        Test.COROUTINE_TEST
     )
 
 }
