@@ -12,4 +12,9 @@ object Versions {
     val MOCKITO_CORE = "3.9.0"
     val MOCKITO_KOTLIN = "2.2.0"
     val COROUTINE_TEST = "1.4.2"
+    val RECYCLER_VIEW = "1.2.0"
+    val COROUTINES_ANDROID = "1.4.3"
+    val LIFECYCLE_EXTENSIONS = "2.2.0"
+    val LIFECYCLE_RUNTIME = "2.3.1"
+    val LIFECYCLE_VIEWMODEL = "2.3.1"
 }

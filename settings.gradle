@@ -1,3 +1,5 @@
 rootProject.name = "GitHubArchitecturePoc"
 include ':app'
 include ':domain'
+include ':repogithub'
+include ':repo'
