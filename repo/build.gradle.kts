@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":component"))
     RepoGitHubFeature.main.forEach { implementation(it) }
     RepoGitHubFeature.unitTest.forEach { testImplementation(it) }
     RepoGitHubFeature.interfaceTest.forEach { androidTestImplementation(it) }
