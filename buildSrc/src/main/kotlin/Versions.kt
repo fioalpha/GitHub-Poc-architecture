@@ -17,4 +17,5 @@ object Versions {
     val LIFECYCLE_EXTENSIONS = "2.2.0"
     val LIFECYCLE_RUNTIME = "2.3.1"
     val LIFECYCLE_VIEWMODEL = "2.3.1"
+    val PICASSO = "2.71828"
 }
