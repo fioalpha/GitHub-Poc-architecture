@@ -44,4 +44,7 @@ dependencies {
     AppModule.main.forEach { implementation(it) }
     AppModule.unitTest.forEach { testImplementation(it) }
     AppModule.interfaceTest.forEach { androidTestImplementation(it) }
+    implementation(project(":repo"))
+    implementation(project(":component"))
+    implementation(project( ":domain"))
 }

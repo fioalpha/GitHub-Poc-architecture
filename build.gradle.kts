@@ -16,6 +16,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven("https://oss.jfrog.org/libs-snapshot" )
     }
 
     apply(plugin = "org.jlleitschuh.gradle.ktlint")

@@ -7,7 +7,6 @@ object Versions {
     val JUNIT_TEST =  "4.12"
     val JUNIT_EXT_TEXT =  "1.1.2"
     val ESPRESSO =  "3.3.0"
-    val KOTLIN_CORE = "2.2.2"
     val COROUTINE_CORE = "1.4.3"
     val MOCKITO_CORE = "3.9.0"
     val MOCKITO_KOTLIN = "2.2.0"
@@ -18,4 +17,6 @@ object Versions {
     val LIFECYCLE_RUNTIME = "2.3.1"
     val LIFECYCLE_VIEWMODEL = "2.3.1"
     val PICASSO = "2.71828"
+    val KOIN_ANDROID = "2.2.2"
+    val KOIN_ANDROID_VIEW_MODEL = "2.2.2"
 }

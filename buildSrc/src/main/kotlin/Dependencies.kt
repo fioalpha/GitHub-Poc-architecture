@@ -10,12 +10,17 @@ object Android {
     val PICASSO = "com.squareup.picasso:picasso:${Versions.PICASSO}"
 }
 
+object Koin {
+    val KOIN_ANDROID = "org.koin:koin-android:${Versions.KOIN_ANDROID}"
+    val KON_ANDROID_VIEW_MODEL = "org.koin:koin-android-viewmodel:${Versions.KOIN_ANDROID_VIEW_MODEL}"
+}
+
 
 object Kotlin {
+    val KOTLIN_KTX = "androidx.core:core-ktx:1.3.2"
     val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINE_CORE}"
     val KOTLIN_STBLIB = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN_STBLIB}"
     val COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES_ANDROID}"
-
 }
 
 object Test {

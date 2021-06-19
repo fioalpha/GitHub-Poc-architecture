@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("android")
 }
 
@@ -8,19 +8,17 @@ android {
     buildToolsVersion(AndroidVersion.BUILD_TOOLS_VERSION)
 
     defaultConfig {
-        applicationId("com.fioalpha.poc.repo")
         minSdkVersion(AndroidVersion.MIN_SDK_VERSION)
         targetSdkVersion(AndroidVersion.TARGET_SDK_VERSION)
         versionCode = AndroidVersion.VERSION_CODE
         versionName = AndroidVersion.VERSION_NAME
-
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
-            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
@@ -37,6 +35,7 @@ android {
 
 dependencies {
     implementation(project(":component"))
+    implementation(project( ":domain"))
     RepoGitHubFeature.main.forEach { implementation(it) }
     RepoGitHubFeature.unitTest.forEach { testImplementation(it) }
     RepoGitHubFeature.interfaceTest.forEach { androidTestImplementation(it) }

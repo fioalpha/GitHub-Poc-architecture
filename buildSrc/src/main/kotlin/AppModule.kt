@@ -4,7 +4,11 @@ object AppModule {
         Android.CONSTRAINT_LAYOUT,
         Android.KTX_CODE,
         Android.MATERIAL_DESIGN,
-        Kotlin.KOTLIN_STBLIB
+        Kotlin.KOTLIN_STBLIB,
+        Koin.KOIN_ANDROID,
+        Koin.KON_ANDROID_VIEW_MODEL,
+        Kotlin.COROUTINES_ANDROID,
+        Kotlin.KOTLIN_KTX
     )
 
     val unitTest = listOf(
