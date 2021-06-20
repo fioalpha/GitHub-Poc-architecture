@@ -8,11 +8,19 @@ object Android {
     val LIFECYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE_RUNTIME}"
     val LIFECYCLE_VIEW_MODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE_VIEWMODEL}"
     val PICASSO = "com.squareup.picasso:picasso:${Versions.PICASSO}"
+    val GSON = "com.google.code.gson:gson:${Versions.GSON}"
 }
 
 object Koin {
     val KOIN_ANDROID = "org.koin:koin-android:${Versions.KOIN_ANDROID}"
     val KON_ANDROID_VIEW_MODEL = "org.koin:koin-android-viewmodel:${Versions.KOIN_ANDROID_VIEW_MODEL}"
+    val KOIN_CORE = "org.koin:koin-core:${Versions.KOIN_CORE}"
+}
+
+object Retrofit {
+    val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.LOGGING_INTERCEPTOR}"
+    val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
+    val RETROFIT_CONVERTER = "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT_CONVERTER}"
 }
 
 

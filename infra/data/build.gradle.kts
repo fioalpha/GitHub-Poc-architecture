@@ -9,5 +9,5 @@ java {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN_STBLIB}")
+   DataModule.main.forEach { implementation(it) }
 }

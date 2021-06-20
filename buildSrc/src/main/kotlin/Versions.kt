@@ -19,4 +19,9 @@ object Versions {
     val PICASSO = "2.71828"
     val KOIN_ANDROID = "2.2.2"
     val KOIN_ANDROID_VIEW_MODEL = "2.2.2"
+    val LOGGING_INTERCEPTOR = "4.9.1"
+    val RETROFIT = "2.9.0"
+    val RETROFIT_CONVERTER = "2.7.1"
+    val GSON = "2.8.6"
+    val KOIN_CORE = "2.2.2"
 }
