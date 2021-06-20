@@ -1,6 +1,5 @@
 package com.fioalpha.poc.repo.presentation
 
-import android.accounts.NetworkErrorException
 import com.fioalpha.poc.domain.model.FetchRepoGitHubUseCase
 import com.nhaarman.mockitokotlin2.*
 import kotlinx.coroutines.Dispatchers
@@ -8,13 +7,10 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.TestCoroutineDispatcher
-import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.setMain
 import org.junit.Assert
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito
 
 @ExperimentalCoroutinesApi
 @InternalCoroutinesApi
