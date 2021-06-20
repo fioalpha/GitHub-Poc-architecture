@@ -47,4 +47,5 @@ dependencies {
     implementation(project(":repo"))
     implementation(project(":component"))
     implementation(project( ":domain"))
+    implementation(project(":infra:data"))
 }
