@@ -12,7 +12,8 @@ object RepoGitHubFeature {
         Kotlin.COROUTINES_ANDROID,
         Koin.KOIN_ANDROID,
         Koin.KON_ANDROID_VIEW_MODEL,
-        Kotlin.KOTLIN_KTX
+        Kotlin.KOTLIN_KTX,
+        Android.SWIPE_REFRESH
     )
 
     val unitTest = listOf(

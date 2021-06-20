@@ -3,16 +3,21 @@ package com.fioalpha.poc.repo.presentation
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
+import com.fioalpha.poc.component.get
 
 import com.fioalpha.poc.repo.databinding.ActivityRepoMainBinding
 import com.fioalpha.poc.repo.databinding.RepoItemBinding
 import com.fioalpha.poc.repo.presentation.model.RepoGithub
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -33,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         with(viewBinding.repoRecycler) {
             this.adapter = repoGitHubAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)
+            addItemDecoration(DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL))
         }
 
         viewModel.run {
@@ -51,10 +57,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleState(state: RepoGitHubState) {
         when(state) {
-            is RepoGitHubState.Error -> toastShow(state.error)
+            is RepoGitHubState.Error -> {
+                Log.e("alskdhas", state.error)
+                viewBinding.repoSwipeRefresh.isRefreshing = false
+            }
             RepoGitHubState.Idle -> { }
-            RepoGitHubState.Loader -> toastShow("Loading...")
-            is RepoGitHubState.Result -> repoGitHubAdapter.updateData(state.data)
+            RepoGitHubState.Loader -> {
+                viewBinding.repoSwipeRefresh.isRefreshing = true
+            }
+            is RepoGitHubState.Result -> {
+                viewBinding.repoSwipeRefresh.isRefreshing = false
+                repoGitHubAdapter.updateData(state.data)
+            }
         }
     }
 

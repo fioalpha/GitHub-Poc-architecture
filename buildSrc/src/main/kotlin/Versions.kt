@@ -25,4 +25,5 @@ object Versions {
     val GSON = "2.8.6"
     val KOIN_CORE = "2.2.2"
     val OKHTTP = "4.9.1"
+    val SWIPE_REFRESH = "1.1.0"
 }

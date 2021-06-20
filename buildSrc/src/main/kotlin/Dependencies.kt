@@ -9,6 +9,7 @@ object Android {
     val LIFECYCLE_VIEW_MODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE_VIEWMODEL}"
     val PICASSO = "com.squareup.picasso:picasso:${Versions.PICASSO}"
     val GSON = "com.google.code.gson:gson:${Versions.GSON}"
+    val SWIPE_REFRESH = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.SWIPE_REFRESH}"
 }
 
 object Koin {

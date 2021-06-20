@@ -7,7 +7,7 @@ data class GitHubRequest(
 data class RepoItemRequest(
     val name: String?,
     val full_name: String?,
-    val fork_count: Int?,
+    val forks: Int?,
     val stargazers_count: Int?,
     val owner: OwnerRequest?
 )

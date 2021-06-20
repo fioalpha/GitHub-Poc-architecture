@@ -13,7 +13,7 @@ class DataRepository(
             RepoGitHub(
                 name = it.full_name?: "",
                 stars = it.stargazers_count?: 0,
-                forks = it.fork_count?: 1,
+                forks = it.forks?: 0,
                 User(
                     it.owner?.avatar_url?: "",
                     it.owner?.login?: ""

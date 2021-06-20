@@ -1,5 +1,6 @@
 package com.fioalpha.poc.repo.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fioalpha.poc.domain.model.FetchRepoGitHubUseCase
@@ -47,6 +48,7 @@ class RepoGitHubViewModel(
             }
             states.value = RepoGitHubState.Result(result)
         } catch (e: Exception){
+            Log.e("ERRO", e.message?: "EROR")
             states.value = RepoGitHubState.Error("Has error")
         }
     }
