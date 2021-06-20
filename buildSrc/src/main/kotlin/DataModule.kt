@@ -5,6 +5,7 @@ object DataModule {
         Retrofit.RETROFIT_CONVERTER,
         Android.GSON,
         Kotlin.KOTLIN_STBLIB,
-        Koin.KOIN_ANDROID
+        Koin.KOIN_ANDROID,
+        Retrofit.OKHTTP
     )
 }

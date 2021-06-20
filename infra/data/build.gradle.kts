@@ -9,5 +9,6 @@ java {
 }
 
 dependencies {
-   DataModule.main.forEach { implementation(it) }
+    DataModule.main.forEach { implementation(it) }
+    implementation(project(":domain"))
 }

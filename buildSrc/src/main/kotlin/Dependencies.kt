@@ -21,6 +21,7 @@ object Retrofit {
     val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.LOGGING_INTERCEPTOR}"
     val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
     val RETROFIT_CONVERTER = "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT_CONVERTER}"
+    val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP}"
 }
 
 

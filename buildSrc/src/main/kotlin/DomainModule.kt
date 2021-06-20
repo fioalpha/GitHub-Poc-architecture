@@ -2,7 +2,8 @@ object DomainModule {
 
     val main = listOf(
         Kotlin.KOTLIN_STBLIB,
-        Kotlin.COROUTINES_CORE
+        Kotlin.COROUTINES_CORE,
+        Koin.KOIN_CORE
     )
 
     val unitTest = listOf(

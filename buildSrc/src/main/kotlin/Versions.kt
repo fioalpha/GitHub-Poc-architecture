@@ -24,4 +24,5 @@ object Versions {
     val RETROFIT_CONVERTER = "2.7.1"
     val GSON = "2.8.6"
     val KOIN_CORE = "2.2.2"
+    val OKHTTP = "4.9.1"
 }
