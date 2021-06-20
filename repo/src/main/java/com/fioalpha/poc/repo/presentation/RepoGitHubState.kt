@@ -11,5 +11,6 @@ sealed class RepoGitHubState {
 
 sealed class RepoGitHubInteraction {
     object LoaderItems: RepoGitHubInteraction()
+    data class UpdateItem(val page: Int): RepoGitHubInteraction()
 }
 

@@ -19,11 +19,18 @@ class RepoGitHubViewModel(
 ): ViewModel() {
     private val states: MutableStateFlow<RepoGitHubState> = MutableStateFlow(RepoGitHubState.Idle)
     private val interactions = Channel<RepoGitHubInteraction>(Channel.UNLIMITED)
+    private var pageCurrent = 1
 
     init {
         viewModelScope.launch {
             interactions.consumeAsFlow().collect {
-                fetch()
+                when (it) {
+                    is RepoGitHubInteraction.LoaderItems -> fetch(pageCurrent)
+                    is RepoGitHubInteraction.UpdateItem -> {
+                        pageCurrent = it.page
+                        fetch(pageCurrent)
+                    }
+                }
             }
         }
     }
@@ -34,10 +41,10 @@ class RepoGitHubViewModel(
         interactions.send(interaction)
     }
 
-    private suspend fun fetch() {
+    private suspend fun fetch(page: Int) {
         states.value = RepoGitHubState.Loader
         try {
-            val result = usecase.execute(1).map {
+            val result = usecase.execute(page).map {
                 RepoGithub(
                     it.name,
                     it.stars,

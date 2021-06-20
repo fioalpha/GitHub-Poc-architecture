@@ -1,24 +1,20 @@
 package com.fioalpha.poc.repo.presentation
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.fioalpha.poc.component.get
-
 import com.fioalpha.poc.repo.databinding.ActivityRepoMainBinding
 import com.fioalpha.poc.repo.databinding.RepoItemBinding
 import com.fioalpha.poc.repo.presentation.model.RepoGithub
-import com.google.android.material.snackbar.Snackbar
+import com.fioalpha.poc.repo.presentation.utils.EndlessRecyclerScrollListener
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -29,8 +25,15 @@ class MainActivity : AppCompatActivity() {
 
     private val viewBinding by viewBinding(ActivityRepoMainBinding::inflate)
     private val repoGitHubAdapter: RepoGitHubAdapter by lazy { RepoGitHubAdapter() }
-
     private val viewModel: RepoGitHubViewModel by inject()
+    private val linearLayoutManager: LinearLayoutManager by lazy {  LinearLayoutManager(this@MainActivity) }
+    private val endlessScroll: EndlessRecyclerScrollListener by lazy {
+        object : EndlessRecyclerScrollListener(linearLayoutManager) {
+            override fun onLoadMore(currentPage: Int) {
+                viewModel.handle(RepoGitHubInteraction.UpdateItem(currentPage))
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         with(viewBinding.repoRecycler) {
             this.adapter = repoGitHubAdapter
-            layoutManager = LinearLayoutManager(this@MainActivity)
+            layoutManager = this@MainActivity.linearLayoutManager
             addItemDecoration(DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL))
         }
 
@@ -50,6 +53,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         viewBinding.repoErrorComponent.setTryAgain { loaderData() }
+        viewBinding.repoRecycler.addOnScrollListener(endlessScroll)
     }
 
     override fun onStart() {
@@ -66,6 +70,7 @@ class MainActivity : AppCompatActivity() {
             is RepoGitHubState.Error -> {
                 viewBinding.repoErrorComponent.visibility = View.VISIBLE
                 viewBinding.repoSwipeRefresh.isRefreshing = false
+                viewBinding.repoRecycler.visibility = View.GONE
             }
             RepoGitHubState.Idle -> { }
             RepoGitHubState.Loader -> {
@@ -76,6 +81,7 @@ class MainActivity : AppCompatActivity() {
                 viewBinding.repoErrorComponent.visibility = View.GONE
                 viewBinding.repoSwipeRefresh.isRefreshing = false
                 repoGitHubAdapter.updateData(state.data)
+                viewBinding.repoRecycler.visibility = View.VISIBLE
             }
         }
     }
@@ -117,3 +123,4 @@ class RepoGitHubAdapter: RecyclerView.Adapter<RepoGitHubAdapter.RepoGitHubViewHo
 inline fun <T : ViewBinding> AppCompatActivity.viewBinding(
     crossinline binder: (LayoutInflater) -> T
 ) = lazy(LazyThreadSafetyMode.NONE) { binder.invoke(layoutInflater) }
+
