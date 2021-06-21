@@ -33,7 +33,7 @@ class RepoGitHubViewModelTest {
     @Ignore
     @Test()
     fun `when called LoaderItems With success request then Return success state`() {
-        runBlocking(Dispatchers.Main) {
+        runBlocking {
             whenever(fetchUseCase.execute(any())).thenReturn(listOf())
             val value = viewModel.bind()
             Assert.assertTrue(value.value is RepoGitHubState.Idle)
