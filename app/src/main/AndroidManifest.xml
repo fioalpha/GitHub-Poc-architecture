@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".CustomApplication"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.GitHubArchitecturePoc">
         <activity android:name="com.fioalpha.poc.repo.presentation.MainActivity">
             <intent-filter>

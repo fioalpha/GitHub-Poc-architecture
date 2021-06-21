@@ -26,4 +26,8 @@ object Versions {
     val KOIN_CORE = "2.2.2"
     val OKHTTP = "4.9.1"
     val SWIPE_REFRESH = "1.1.0"
+    val RESTMOCK = "0.4.3"
+    val JUNIT_EXT = "1.1.2"
+    val EXPRESSO_CONTRIB = "3.3.0"
+    val TEST_RULES = "1.3.0"
 }

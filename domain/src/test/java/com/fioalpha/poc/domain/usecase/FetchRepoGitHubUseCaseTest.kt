@@ -1,8 +1,6 @@
 package com.fioalpha.poc.domain.usecase
 
 import com.fioalpha.poc.domain.Repository
-import com.fioalpha.poc.domain.model.FetchRepoGitHubUseCase
-import com.fioalpha.poc.domain.model.FetchRepoGitHubUseCaseImpl
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.*

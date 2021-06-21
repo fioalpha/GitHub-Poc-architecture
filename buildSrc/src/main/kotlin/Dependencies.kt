@@ -40,4 +40,7 @@ object Test {
     val MOCKITO_CORE = "org.mockito:mockito-core:${Versions.MOCKITO_CORE}"
     val MOCKITO_KOTLIN = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.MOCKITO_KOTLIN}"
     val COROUTINE_TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINE_TEST}"
+    val RESTMOCK = "com.github.andrzejchm.RESTMock:android:${Versions.RESTMOCK}"
+    val EXPRESSO_CONTRIB = "androidx.test.espresso:espresso-contrib:${Versions.EXPRESSO_CONTRIB}"
+    val TEST_RULES = "androidx.test:rules:${Versions.TEST_RULES}"
 }

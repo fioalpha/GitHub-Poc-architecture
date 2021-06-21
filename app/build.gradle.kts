@@ -14,7 +14,7 @@ android {
         versionCode = AndroidVersion.VERSION_CODE
         versionName = AndroidVersion.VERSION_NAME
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.fioalpha.poc.githubarchitecturepoc.AppTestRunner"
         vectorDrawables.useSupportLibrary = true
     }
 

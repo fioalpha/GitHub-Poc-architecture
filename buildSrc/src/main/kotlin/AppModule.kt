@@ -17,6 +17,9 @@ object AppModule {
 
     val interfaceTest = listOf(
         Test.JUNIT_EXT_TEXT,
-        Test.ESPRESSO
+        Test.ESPRESSO,
+        Test.RESTMOCK,
+        Test.EXPRESSO_CONTRIB,
+        Test.TEST_RULES
     )
 }

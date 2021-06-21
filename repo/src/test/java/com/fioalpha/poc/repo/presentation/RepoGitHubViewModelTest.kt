@@ -1,6 +1,6 @@
 package com.fioalpha.poc.repo.presentation
 
-import com.fioalpha.poc.domain.model.FetchRepoGitHubUseCase
+import com.fioalpha.poc.domain.usecase.FetchRepoGitHubUseCase
 import com.nhaarman.mockitokotlin2.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

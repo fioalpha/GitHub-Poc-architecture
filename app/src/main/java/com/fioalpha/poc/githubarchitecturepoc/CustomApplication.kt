@@ -11,9 +11,9 @@ import org.koin.core.logger.Level
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
-class CustomApplication: Application() {
+open class CustomApplication: Application() {
 
-    val applicationModule = module {
+    open val applicationModule = module {
         single(qualifier = named("URL")) { "https://api.github.com/" }
     }
 

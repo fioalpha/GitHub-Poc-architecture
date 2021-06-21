@@ -3,7 +3,7 @@ package com.fioalpha.poc.repo.presentation
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.fioalpha.poc.domain.model.FetchRepoGitHubUseCase
+import com.fioalpha.poc.domain.usecase.FetchRepoGitHubUseCase
 import com.fioalpha.poc.repo.presentation.model.RepoGithub
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.channels.Channel
